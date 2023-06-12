@@ -28,10 +28,10 @@ All methods implemented by this library
 
 Method
 --|
-[Enum::fromName(int|string|null): static](#enum--fromname)
-[Enum::tryFromName(int|string|null): static|null](#enum--tryfromname)
-[Enum::names(): array](#enum--names)
-[Enum::values(): array](#enum--values)
+[Enum::fromName(int\|string\|null): static](#enumfromname)
+[Enum::tryFromName(int\|string\|null): static\|null](#enumtryfromname)
+[Enum::names(): array](#enumnames)
+[Enum::values(): array](#enumvalues)
 
 ## Enum::fromName()
 
