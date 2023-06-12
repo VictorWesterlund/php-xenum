@@ -17,7 +17,7 @@ enum HelloWorld: string {
 }
 
 // Like Enum::tryFrom() but for Enum names instead of values
-HelloWorld::fromName("FOO"); // 
+HelloWorld::fromName("FOO"); // HelloWorld::FOO
 // .. and of course the non-throwing version
 HelloWorld::tryFromName("MOM"); // null
 ```
