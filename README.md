@@ -16,9 +16,9 @@ enum HelloWorld: string {
     case BAZ = "QUX";
 }
 
-// Like Enum::tryFrom() but for Enum names instead of values
+// Like Enum::from() but for Enum names instead of values
 HelloWorld::fromName("FOO"); // HelloWorld::FOO
-// .. and of course the non-throwing version
+// And of course the non-throwing version similar to Enum::tryFrom()
 HelloWorld::tryFromName("MOM"); // null
 ```
 
