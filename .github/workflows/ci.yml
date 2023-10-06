@@ -1,0 +1,21 @@
+name: PHP xEnum CI
+run-name: PHP xEnum CI
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ["8.2"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Run PHPUnit tests
+        uses: php-actions/phpunit@v3
