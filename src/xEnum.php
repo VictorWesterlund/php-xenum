@@ -9,7 +9,7 @@
     */
     trait xEnum {
         // Resolve enum case from enum name or return null
-        public static function tryFromName(string|null $name): static|null {
+        public static function tryFromName(?string $name): ?static {
             foreach (self::cases() as $case) {
                 if (strtoupper($name) === $case->name) {
                     return $case;
@@ -21,9 +21,9 @@
         }
 
         // Throw a ValueError if Enum name is not found
-        public static function fromName(string|null $name): static {
+        public static function fromName(?string $name): static {
             $case = self::tryFromName($name);
-            return $case ? $case : throw new ValueError("'${name}' is not a valid case for enum " . self::class);
+            return $case ? $case : throw new ValueError("'{$name}' is not a valid case for enum " . self::class);
         }
 
         // Return array of enum names
