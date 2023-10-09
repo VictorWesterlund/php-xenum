@@ -35,4 +35,9 @@
         public static function values(): array {
             return array_column(self::cases(), "value");
         }
+
+        // Return assoc array of enum names and values
+        public static function entries(): array {
+            return array_combine(self::names(), self::values());
+        }
     }
