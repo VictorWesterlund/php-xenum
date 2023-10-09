@@ -22,6 +22,28 @@ HelloWorld::fromName("FOO"); // HelloWorld::FOO
 HelloWorld::tryFromName("MOM"); // null
 ```
 
+# How to use
+
+Requires PHP 8.0 or newer
+
+1. **Install from composer**
+    ```
+    composer require victorwesterlund/xenum
+    ```
+
+2. **`use` in your project**
+    ```php
+    use \victorwesterlund\xEnum;
+    ```
+
+3. **`use` with your Enums**
+    ```php
+    enum HelloWorld {
+        use xEnum;
+    }
+    ```
+
+
 # Methods
 
 All methods implemented by this library
@@ -32,6 +54,7 @@ Method
 [Enum::tryFromName(int\|string\|null): static\|null](#enumtryfromname)
 [Enum::names(): array](#enumnames)
 [Enum::values(): array](#enumvalues)
+[Enum::entries(): array](#enumentries)
 
 ## Enum::fromName()
 
@@ -107,7 +130,7 @@ HelloWorld::names(); // ["FOO", "BAZ"]
 Return sequential array of Enum case values
 
 ```php
-Enum::values(): array
+Enum::entries(): array
 ```
 
 Example:
@@ -123,23 +146,23 @@ enum HelloWorld: string {
 HelloWorld::values(); // ["BAR", "QUX"]
 ```
 
-# How to use
+## Enum::entries()
 
-Requires PHP 8.0 or newer
+Return an associative array of Enum names and values. This method is similar to [JavaScript's Object.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 
-1. **Install from composer**
-    ```
-    composer require victorwesterlund/xenum
-    ```
+```php
+Enum::entries(): array
+```
 
-2. **`use` in your project**
-    ```php
-    use \victorwesterlund\xEnum;
-    ```
+Example:
 
-3. **`use` with your Enums**
-    ```php
-    enum HelloWorld {
-        use xEnum;
-    }
-    ```
+```php
+enum HelloWorld: string {
+    use xEnum;
+    
+    case FOO = "BAR";
+    case BAZ = "QUX";
+}
+
+HelloWorld::entries(); // ["FOO" => "BAR", "BAZ" => "QUX"]
+```
