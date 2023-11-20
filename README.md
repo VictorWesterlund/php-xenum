@@ -76,7 +76,7 @@ enum HelloWorld: string {
     case BAZ = "QUX";
 }
 
-HelloWorld::fromName("BAR"); // HelloWorld::FOO
+HelloWorld::fromName("FOO"); // HelloWorld::FOO
 HelloWorld::fromName("MOM") // ValueError: 'MOM' is not a valid case for HelloWorld
 ```
 
@@ -100,7 +100,7 @@ enum HelloWorld: string {
     case BAZ = "QUX";
 }
 
-HelloWorld::tryFromName("BAR"); // HelloWorld::FOO
+HelloWorld::tryFromName("FOO"); // HelloWorld::FOO
 HelloWorld::tryFromName("MOM") // null
 ```
 
